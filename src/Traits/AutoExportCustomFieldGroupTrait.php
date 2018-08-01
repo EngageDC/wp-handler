@@ -1,9 +1,23 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Traits;
+/** @noinspection PhpComposerExtensionStubsInspection */
+/** @noinspection PhpUndefinedConstantInspection */
+/** @noinspection PhpUndefinedMethodInspection */
+/** @noinspection PhpUndefinedFieldInspection */
+/** @noinspection PhpUndefinedFunctionInspection */
+/** @noinspection PhpUndefinedClassInspection */
+/** @noinspection SqlResolve */
 
-use WP_Post;
+namespace Engage\WordPress\Traits;
 
+/**
+ * Trait AutoExportCustomFieldGroupTrait
+ *
+ * Automatically exports ACF JSON data to a specified folder so that it can
+ * be checked into git for safe-keeping.
+ *
+ * @package Engage\WordPress\Traits
+ */
 trait AutoExportCustomFieldGroupTrait {
 	/**
 	 * @var string
@@ -30,6 +44,8 @@ trait AutoExportCustomFieldGroupTrait {
 			$folder = $this->getExportFolder($folder);
 
 			if ($this->findOrCreate($folder)) {
+				/** @noinspection PhpUndefinedFunctionInspection */
+
 				$this->acfExportFolder = trailingslashit($folder);
 				$this->addAction("save_post", "exportFieldGroup", 100000000, 2);
 			};
@@ -53,6 +69,8 @@ trait AutoExportCustomFieldGroupTrait {
 			// set the default folder.  that is the /assets/ACFs folder in
 			// the stylesheet's directory.
 
+			/** @noinspection PhpUndefinedFunctionInspection */
+
 			$folder = get_stylesheet_directory() . "/assets/ACFs";
 		}
 
@@ -61,6 +79,8 @@ trait AutoExportCustomFieldGroupTrait {
 		// might not be able to change the parameter to the initializing
 		// method above, will still be able to change the folder location if
 		// necessary.
+
+		/** @noinspection PhpUndefinedFunctionInspection */
 
 		return apply_filters("acf_export_folder", $folder);
 	}
@@ -135,8 +155,8 @@ trait AutoExportCustomFieldGroupTrait {
 
 		$d = "%d";
 
-		/** @noinspection SqlResolve */
 		$statement = $wpdb->prepare(
+			/** @lang text */
 			"SELECT post_name, post_excerpt FROM $wpdb->posts WHERE ID=$d",
 			$postId
 		);

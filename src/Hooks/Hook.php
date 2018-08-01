@@ -1,12 +1,16 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Hooks;
+namespace Engage\WordPress\Hooks;
 
-use Engage\GallyShare\WordPress\Handlers\HandlerInterface;
+use Engage\WordPress\Handlers\HandlerInterface;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionException;
 
+/**
+ * Class Hook
+ * @package Engage\WordPress\Hooks
+ */
 class Hook implements HookInterface {
 	/**
 	 * @var string

@@ -17,8 +17,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "dashifen/exception": "^1",
-		"timber/timber": "^1.7",
-        "php": "^7.0"
+        "php": "^7.0",
+        "dashifen/exception": "^1"
     }
 }

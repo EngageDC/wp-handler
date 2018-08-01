@@ -1,6 +1,8 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Traits;
+/** @noinspection PhpUndefinedFunctionInspection */
+
+namespace Engage\WordPress\Traits;
 
 /**
  * Trait CustomPostTypeUITrait
@@ -8,7 +10,7 @@ namespace Engage\GallyShare\WordPress\Traits;
  * Restricts access to the CPT UI menu item to only those users that
  * have an engagedc.com email address.
  *
- * @package Engage\GallyShare\WordPress\Traits
+ * @package Engage\WordPress\Traits
  */
 trait HideCustomPostTypeUITrait {
 	/**

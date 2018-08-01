@@ -1,9 +1,12 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Handlers;
+/** @noinspection PhpUndefinedClassInspection */
+/** @noinspection PhpUndefinedFunctionInspection */
 
-use Engage\GallyShare\WordPress\Hooks\Hook;
-use Engage\GallyShare\WordPress\Hooks\HookException;
+namespace Engage\WordPress\Handlers;
+
+use Engage\WordPress\Hooks\Hook;
+use Engage\WordPress\Hooks\HookException;
 use ReflectionException;
 
 /**
@@ -14,7 +17,7 @@ use ReflectionException;
  * WordPress hooks preventing accidental/malicious execution of a theme's
  * methods elsewhere.
  *
- * @package Engage\GallyShare
+ * @package Engage\WordPress\Handlers
  */
 abstract class AbstractHandler implements HandlerInterface {
 	/**
@@ -33,7 +36,7 @@ abstract class AbstractHandler implements HandlerInterface {
 	protected $url;
 
 	/**
-	 * GallyShare constructor.
+	 * AbstractHandler constructor.
 	 */
 	public function __construct() {
 		$this->dir = get_stylesheet_directory();
@@ -206,6 +209,7 @@ abstract class AbstractHandler implements HandlerInterface {
 	 * @throws ReflectionException
 	 */
 	protected function addAction(string $hook, string $method, int $priority = 10, int $arguments = 1) {
+
 		add_action($hook, [$this, $method], $priority, $arguments);
 		$hookIndex = Hook::getHookIndex($hook, $this, $method, $priority);
 		$this->hooked[$hookIndex] = new Hook($hook, $this, $method, $priority, $arguments);

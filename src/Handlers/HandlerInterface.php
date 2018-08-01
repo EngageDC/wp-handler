@@ -1,10 +1,10 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Handlers;
+namespace Engage\WordPress\Handlers;
 
 /**
  * Interface HandlerInterface
- * @package Engage\GallyShare
+ * @package Engage\WordPress\Handlers
  */
 interface HandlerInterface {
 	/**

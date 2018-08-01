@@ -1,11 +1,17 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Pages\TimberPage;
+/** @noinspection PhpUndefinedFunctionInspection */
+/** @noinspection PhpUndefinedClassInspection */
 
-use Engage\GallyShare\WordPress\Pages\PageException;
+namespace Engage\WordPress\Pages\TimberPage;
+
+use Engage\WordPress\Pages\PageException;
 use ReflectionException;
-use Timber\Timber;
 
+/**
+ * Class AbstractTimberPage
+ * @package Engage\WordPress\Pages\TimberPage
+ */
 abstract class AbstractTimberPage implements TimberPageInterface {
 	/**
 	 * The data context for a Twig template.  Frequently initialized by

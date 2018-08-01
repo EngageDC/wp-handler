@@ -1,12 +1,12 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Handlers;
+namespace Engage\WordPress\Handlers;
 
 use Dashifen\Exception\Exception;
 
 /**
  * Class HandlerException
- * @package Engage\GallyShare
+ * @package Engage\WordPress\Handlers
  */
 class HandlerException extends Exception {
 	const UNHOOKED_METHOD = 1;

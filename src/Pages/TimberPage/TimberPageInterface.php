@@ -1,10 +1,10 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Pages\TimberPage;
+namespace Engage\WordPress\Pages\TimberPage;
 
 /**
  * Interface PageInterface
- * @package Engage\GallyShare\WordPress\Pages
+ * @package Engage\WordPress\Pages
  */
 interface TimberPageInterface {
 	/**

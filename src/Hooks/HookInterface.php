@@ -1,10 +1,11 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Hooks;
-use Engage\GallyShare\WordPress\Handlers\HandlerInterface;
+namespace Engage\WordPress\Hooks;
+use Engage\WordPress\Handlers\HandlerInterface;
 
 /**
  * Interface HookInterface
+ * @package Engage\WordPress\Hooks
  */
 interface HookInterface {
 	/**

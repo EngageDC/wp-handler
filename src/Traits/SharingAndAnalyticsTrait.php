@@ -1,6 +1,8 @@
 <?php
 
-namespace Engage\GallyShare\WordPress\Traits;
+/** @noinspection PhpUndefinedFunctionInspection */
+
+namespace Engage\WordPress\Traits;
 
 /**
  * Trait SharingTrait
@@ -9,7 +11,7 @@ namespace Engage\GallyShare\WordPress\Traits;
  * this trait provides the basic Twitter, Facebook, and Google fields to
  * provide for basic sharing and analytics.
  *
- * @package Engage\GallyShare\WordPress\Traits
+ * @package Engage\WordPress\Traits
  */
 trait SharingAndAnalyticsTrait {
 	/**
