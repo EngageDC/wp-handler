@@ -10,6 +10,8 @@
 
 namespace Engage\WordPress\Traits;
 
+use WP_Post;
+
 /**
  * Trait AutoExportCustomFieldGroupTrait
  *

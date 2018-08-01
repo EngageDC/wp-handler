@@ -1,5 +1,6 @@
 <?php
 
+/** @noinspection PhpUndefinedNamespaceInspection */
 /** @noinspection PhpUndefinedFunctionInspection */
 /** @noinspection PhpUndefinedClassInspection */
 
@@ -7,6 +8,7 @@ namespace Engage\WordPress\Pages\TimberPage;
 
 use Engage\WordPress\Pages\PageException;
 use ReflectionException;
+use Timber\Timber;
 
 /**
  * Class AbstractTimberPage
