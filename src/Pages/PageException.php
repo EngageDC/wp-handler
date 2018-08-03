@@ -10,4 +10,5 @@ use Dashifen\Exception\Exception;
  */
 class PageException extends Exception {
 	const CANNOT_RENDER_TEMPLATE = 1;
+	const TEMPLATE_LOCATION_NOT_FOUND = 2;
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Engage\WordPress\Pages\TimberPage;
+namespace Engage\WordPress\Pages;
 
 /**
  * Interface PageInterface
  * @package Engage\WordPress\Pages
  */
-interface TimberPageInterface {
+interface PageInterface {
 	/**
 	 * show
 	 *

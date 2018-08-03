@@ -6,6 +6,7 @@
 
 namespace Engage\WordPress\Pages\TimberPage;
 
+use Engage\WordPress\Pages\Page;
 use Engage\WordPress\Pages\PageException;
 use ReflectionException;
 use Timber\Timber;
@@ -14,7 +15,7 @@ use Timber\Timber;
  * Class AbstractTimberPage
  * @package Engage\WordPress\Pages\TimberPage
  */
-abstract class AbstractTimberPage implements TimberPageInterface {
+abstract class AbstractTimberPage extends Page {
 	/**
 	 * The data context for a Twig template.  Frequently initialized by
 	 * the Timber::get_context() function.
