@@ -28,7 +28,6 @@ interface TwigPageInterface {
 	 * @param Twig_Environment|null $environment
 	 *
 	 * @return void
-	 * @throws ReflectionException
 	 * @throws PageException
 	 */
 	public function setEnvironment(Twig_Environment $environment = null);

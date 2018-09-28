@@ -7,7 +7,6 @@ namespace Engage\WordPress\Handlers;
 
 use Engage\WordPress\Hooks\Hook;
 use Engage\WordPress\Hooks\HookException;
-use ReflectionException;
 
 /**
  * Class AbstractHandler
@@ -123,7 +122,6 @@ abstract class AbstractHandler implements HandlerInterface {
 	 *
 	 * @return mixed
 	 * @throws HandlerException
-	 * @throws ReflectionException
 	 */
 	public function __call(string $method, array $arguments) {
 		if (!in_array($method, $this->hooked)) {
@@ -206,7 +204,6 @@ abstract class AbstractHandler implements HandlerInterface {
 	 *
 	 * @return void
 	 * @throws HookException
-	 * @throws ReflectionException
 	 */
 	protected function addAction(string $hook, string $method, int $priority = 10, int $arguments = 1) {
 
@@ -247,7 +244,6 @@ abstract class AbstractHandler implements HandlerInterface {
 	 * @return void
 	 *
 	 * @throws HookException
-	 * @throws ReflectionException
 	 */
 	protected function addFilter(string $hook, string $method, int $priority = 10, int $arguments = 1) {
 		add_filter($hook, [$this, $method], $priority, $arguments);

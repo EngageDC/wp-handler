@@ -6,7 +6,6 @@
 
 namespace Engage\WordPress\Pages\TwigPage;
 
-use ReflectionException;
 use Engage\WordPress\Pages\Page;
 use Engage\WordPress\Pages\PageException;
 use Twig_Loader_Filesystem;
@@ -57,7 +56,7 @@ abstract class AbstractTwigPage extends Page implements TwigPageInterface {
 	 * @param string $pathToTemplates
 	 *
 	 * @return void
-	 * @throws ReflectionException
+
 	 * @throws PageException
 	 */
 	public function setTemplateLocation(string $pathToTemplates) {
@@ -77,7 +76,6 @@ abstract class AbstractTwigPage extends Page implements TwigPageInterface {
 	 * @param Twig_Environment|null $environment
 	 *
 	 * @return void
-	 * @throws ReflectionException
 	 * @throws PageException
 	 */
 	public function setEnvironment(Twig_Environment $environment = null) {
@@ -102,7 +100,6 @@ abstract class AbstractTwigPage extends Page implements TwigPageInterface {
 		}
 	}
 
-
 	/**
 	 * show
 	 *
@@ -114,7 +111,6 @@ abstract class AbstractTwigPage extends Page implements TwigPageInterface {
 	 * @param bool   $debug
 	 *
 	 * @return void
-	 * @throws ReflectionException
 	 * @throws PageException
 	 */
 	public function show(string $template, bool $debug = false) {

@@ -47,7 +47,6 @@ class Hook implements HookInterface {
 	 * @param int              $argumentCount
 	 *
 	 * @throws HookException
-	 * @throws ReflectionException
 	 */
 	public function __construct(
 		string $hook,
@@ -132,17 +131,29 @@ class Hook implements HookInterface {
 	 * @param string $method
 	 *
 	 * @throws HookException
-	 * @throws ReflectionException
 	 */
 	public function setMethod(string $method) {
 		if (!($this->object instanceof HandlerInterface)) {
 			throw new HookException("Please set a hook's object before method.", HookException::OBJECT_NOT_FOUND);
 		}
 
-		$reflection = new ReflectionClass($this->object);
-		$methods = array_map([$this, "getMethodName"], $reflection->getMethods());
+		try {
+			$reflection = new ReflectionClass($this->object);
+			$methods = array_map([$this, "getMethodName"], $reflection->getMethods());
+			if (!in_array($method, $methods )) {
 
-		if (!in_array($method, $methods )) {
+				// technically, this has nothing to do with our Reflection, but
+				// throwing a ReflectionException here makes our catch-block
+				// much easier.
+
+				throw new ReflectionException();
+			}
+		} catch (ReflectionException $e) {
+
+			// to ensure that we only throw HookExceptions out of this method,
+			// we catch our ReflectionException and then just throw a
+			// HookException instead.
+
 			throw new HookException("Method not found: $method.", HookException::METHOD_NOT_FOUND);
 		}
 
@@ -187,7 +198,6 @@ class Hook implements HookInterface {
 	 * @param int $argumentCount
 	 *
 	 * @throws HookException
-	 * @throws ReflectionException
 	 */
 	public function setArgumentCount(int $argumentCount) {
 		if ($argumentCount < 0) {

@@ -8,7 +8,6 @@ namespace Engage\WordPress\Pages\TimberPage;
 
 use Engage\WordPress\Pages\Page;
 use Engage\WordPress\Pages\PageException;
-use ReflectionException;
 use Timber\Timber;
 
 /**
@@ -60,7 +59,6 @@ abstract class AbstractTimberPage extends Page {
 	 *
 	 * @return void
 	 * @throws PageException
-	 * @throws ReflectionException
 	 */
 	public function show(string $template, bool $debug = false) {
 		if ($debug) {
